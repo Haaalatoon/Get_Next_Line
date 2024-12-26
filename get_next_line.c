@@ -54,34 +54,34 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-// int	main(void)
-// {
-//     int		fd;
-//     char	*line;
+int	main(void)
+{
+    int		fd;
+    char	*line;
 
-//     fd = open("normal.txt", O_RDONLY | O_CREAT, 0644);
-//     if (fd < 0)
-//     {
-//         printf("Error opening file");
-//         return (1);
-//     }
-//     line = get_next_line(fd);
-//     if (line)
-//     {
-//         printf("%s\n", line);
-//         free(line);
-//     }
-//     else
-//         printf("No line read or an error occurred.\n");
-//     printf("2nd call\n");
-//     line = get_next_line(fd);
-//     if (line)
-//     {
-//         printf("%s\n", line);
-//         free(line);
-//     }
-//     else
-//         printf("No line read or an error occurred.\n");
-//     close(fd);
-//     return (0);
-// }
+    fd = open("normal.txt", O_RDONLY | O_CREAT, 0644);
+    if (fd < 0)
+    {
+        printf("Error opening file");
+        return (1);
+    }
+    line = get_next_line(fd);
+    if (line)
+    {
+        printf("%s", line);
+        free(line);
+    }
+    else
+        printf("No line read or an error occurred.\n");
+    printf("2nd call\n");
+    line = get_next_line(fd);
+    if (line)
+    {
+        printf("%s", line);
+        free(line);
+    }
+    else
+        printf("No line read or an error occurred.\n");
+    close(fd);
+    return (0);
+}
